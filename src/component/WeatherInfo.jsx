@@ -13,6 +13,14 @@ function CitySearch(){
       return;
     }
 
+    try {
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_API_KEY}`
+        )
+    } catch (err) {
+      setError(err.message);
+    }
+
   }
 
 }
