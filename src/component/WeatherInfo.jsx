@@ -27,5 +27,9 @@ function CurrentWeather(){
     return <div className="text-red-500">{error}</div>
    }
 
+   if (!weatherData) {
+     return <div>Loading....</div>
+   }
+
 
 }
