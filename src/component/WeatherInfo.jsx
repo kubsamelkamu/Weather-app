@@ -18,6 +18,8 @@ function CitySearch({onWeatherData}){
         const response = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_API_KEY}`
         )
+        onWeatherData(response.data);
+        setError('');
     } catch (err) {
       setError(err.message);
     }
