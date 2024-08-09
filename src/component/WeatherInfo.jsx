@@ -37,7 +37,7 @@ function CurrentWeather(){
         <p className="text-gray-700">{weatherData.weather[0].description}</p>
         <p className="text-gray-800 text-lg">{weatherData.main.temp}°C</p>
     </div>
-   )
-
-
+   );
 }
+
+export default CurrentWeather;
