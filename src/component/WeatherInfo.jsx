@@ -40,13 +40,13 @@ function CurrentWeather(){
         <div className="flex items-center mb-4">
             <img src={weatherIconUrl} alt={weather[0].description} className="w-12 h-12 mr-4"/>
             <div>
-              <p className="text-xl text-gray-700 capitalize">{weather[0].description}</p>
-              <p className="text-3xl text-gray-800">{main.temp}°C</p>
+              <p className="text-3xl text-gray-800 ">{weather[0].description}</p>
+              <p className="text-3xl text-gray-800">Tempreture:{main.temp}°C</p>
+              <p className="text-3xl text-gray-800">Humidity: {main.humidity}%</p>
+              <p className="text-3xl text-gray-800">Wind Speed: {wind.speed} m/s</p>
             </div>
-            <div className="text-gray-600">
-              <p>Humidity: {main.humidity}%</p>
-              <p>Wind Speed: {wind.speed} m/s</p>
-            </div>
+           
+          
         </div>
        
     </div>
