@@ -1,9 +1,10 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 const weather_API_Key = import.meta.env.VITE_API_KEY;
 
-function CitySearch(){
+function CitySearch({onWeatherData}){
   const[city,setCity] = useState('London');
   const[error,setError]=useState(null);
 
@@ -83,6 +84,7 @@ export const Main = () => {
     </main>
   );
 };
+
 
 
 
