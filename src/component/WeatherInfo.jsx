@@ -31,6 +31,9 @@ function CurrentWeather(){
      return <div>Loading....</div>
    }
 
+   const{name,main,weather,wind} = weatherData;
+   const weatherIconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
    return(
     <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto md:max-w-md lg:max-w-lg">
         <h2 className="text-x1 font-bold">{weatherData.name}</h2>
