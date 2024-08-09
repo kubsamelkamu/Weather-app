@@ -52,6 +52,10 @@ function CitySearch({onWeatherData}){
 
 }
 
+CitySearch.propTypes ={
+  onWeatherData: PropTypes.string.isRequired,
+}
+
 function CurrentWeather(){
   const[weatherData,setWeatherData] = useState(null);
   const[error,setError] = useState(null);
