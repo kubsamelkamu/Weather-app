@@ -8,6 +8,10 @@ function CitySearch({onWeatherData}){
   const[city,setCity] = useState('London');
   const[error,setError]=useState(null);
 
+  const handleCityChange =(e)=>{
+     setCity(e.target.value);
+  }
+
   const handleSearch =async()=>{
     if (city.trim === '') {
       setError('Please enter a city name');
