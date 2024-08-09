@@ -23,6 +23,9 @@ function CurrentWeather(){
     fetchWeatherData();
    },[]);
 
+   if (error) {
+    return <div className="text-red-500">{error}</div>
+   }
 
 
 }
