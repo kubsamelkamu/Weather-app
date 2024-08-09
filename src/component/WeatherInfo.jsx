@@ -3,6 +3,20 @@ import axios from "axios";
 
 const weather_API_Key = import.meta.env.VITE_API_KEY;
 
+function CitySearch(){
+  const[city,setCity] = useState('London');
+  const[error,setError]=useState(null);
+
+  const handleSearch =async()=>{
+    if (city.trim === '') {
+      setError('Please enter a city name');
+      return;
+    }
+
+  }
+
+}
+
 function CurrentWeather(){
   const[weatherData,setWeatherData] = useState(null);
   const[error,setError] = useState(null);
@@ -45,13 +59,14 @@ function CurrentWeather(){
               <p className="text-3xl text-gray-800">Humidity: {main.humidity}%</p>
               <p className="text-3xl text-gray-800">Wind Speed: {wind.speed} m/s</p>
             </div>
-           
-          
+
         </div>
        
     </div>
    );
 }
+
+
 
 export const Main = () => {
   return (
