@@ -30,6 +30,26 @@ function CitySearch({onWeatherData}){
 
   }
 
+  return (
+    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto mb-4">
+      <h3 className="text-lg font-bold mb-2">Search for a City</h3>
+      <input
+        type="text"
+        value={city}
+        onChange={handleCityChange}
+        placeholder="Enter city name"
+        className="w-full p-2 border border-gray-300 rounded mb-2"
+      />
+      <button
+        onClick={handleSearch}
+        className="w-full bg-blue-500 text-white p-2 rounded"
+      >
+        Search
+      </button>
+      {error && <p className="text-red-500 mt-2">{error}</p>}
+    </div>
+  );
+
 }
 
 function CurrentWeather(){
