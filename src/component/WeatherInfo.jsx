@@ -32,12 +32,22 @@ function CurrentWeather(){
    }
 
    return(
-    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto">
+    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto md:max-w-md lg:max-w-lg">
         <h2 className="text-x1 font-bold">{weatherData.name}</h2>
         <p className="text-gray-700">{weatherData.weather[0].description}</p>
         <p className="text-gray-800 text-lg">{weatherData.main.temp}°C</p>
     </div>
    );
 }
+
+export const Main = () => {
+  return (
+    <main className="flex-grow bg-gray-100 p-4 md:p-8">
+      <CurrentWeather/>
+    </main>
+  );
+};
+
+
 
 export default CurrentWeather;
