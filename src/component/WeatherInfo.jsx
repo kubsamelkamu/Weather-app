@@ -37,8 +37,18 @@ function CurrentWeather(){
    return(
     <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto md:max-w-md lg:max-w-lg">
         <h2 className="text-x1 font-bold mb-2">{name}</h2>
-        <p className="text-gray-700">{weatherData.weather[0].description}</p>
-        <p className="text-gray-800 text-lg">{weatherData.main.temp}°C</p>
+        <div className="flex items-center mb-4">
+            <img src={weatherIconUrl} alt={weather[0].description} className="w-12 h-12 mr-4"/>
+            <div>
+              <p className="text-xl text-gray-700 capitalize">{weather[0].description}</p>
+              <p className="text-3xl text-gray-800">{main.temp}°C</p>
+            </div>
+            <div className="text-gray-600">
+              <p>Humidity: {main.humidity}%</p>
+              <p>Wind Speed: {wind.speed} m/s</p>
+            </div>
+        </div>
+       
     </div>
    );
 }
