@@ -31,5 +31,13 @@ function CurrentWeather(){
      return <div>Loading....</div>
    }
 
+   return(
+    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto">
+        <h2 className="text-x1 font-bold">{weatherData.name}</h2>
+        <p className="text-gray-700">{weatherData.weather[0].description}</p>
+        <p className="text-gray-800 text-lg">{weatherData.main.temp}°C</p>
+    </div>
+   )
+
 
 }
