@@ -31,6 +31,11 @@ function CitySearch({onWeatherData}){
     fetchWeatherData();
   },[city, onWeatherData])
 
+
+  const handleCityChange=(e)=>{
+      setCity(e.target.value);
+  }
+
   return (
     <div className="bg-white shadow-md rounded p-6 max-w-lg w-full mx-auto mb-4 h-56 flex flex-col justify-between">
       <img 
