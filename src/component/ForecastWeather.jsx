@@ -29,3 +29,22 @@ function Forecast({city}){
     },[city])
 
 }
+
+
+const processForecastData = (data) => {
+    // Process API response to get daily forecast data
+    const dailyData = [];
+    const forecasts = data.list;
+
+    for (let i = 0; i < forecasts.length; i += 8) {
+      const daily = forecasts[i];
+      
+      dailyData.push({
+        date: daily.dt_txt,
+        temp: daily.main.temp,
+        description: daily.weather[0].description,
+        icon: daily.weather[0].icon,
+      });
+    }
+    return dailyData;
+  };
