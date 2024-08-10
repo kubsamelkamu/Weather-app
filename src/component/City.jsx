@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import PropTypes from 'prop-types';
 
 const openweathermap_api_key = import.meta.env.VITE_API_KEY;
 function CitySearch({onWeatherData}){
@@ -56,4 +56,8 @@ function CitySearch({onWeatherData}){
       {error && <p className="text-red-500 mt-2 text-center">{error}</p>}
     </div>
   );
+}
+
+CitySearch.propTypes ={
+  onWeatherData: PropTypes.func.isRequired,
 }
