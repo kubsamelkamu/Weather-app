@@ -12,6 +12,7 @@ function CitySearch({onWeatherData}){
   useEffect(()=>{
     const fetchWeatherData = async()=>{
       if (!city) {
+        onWeatherData(null);
         return;
       }
 
@@ -23,8 +24,9 @@ function CitySearch({onWeatherData}){
         setError('');
       } catch (error) {
         setError(error);
+        onWeatherData(null);
         setError('Could not fetch weather data. Please Enter Correct city Name.');
-        return;
+        
         
       }
     }
