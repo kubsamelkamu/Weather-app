@@ -17,8 +17,10 @@ function CitySearch({onWeatherData}){
 
       try {
         const response = await axios(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${openweathermap_api_key}`
         )
+        onWeatherData(response.data);
+        setError('');
       } catch (error) {
         
       }
