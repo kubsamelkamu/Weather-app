@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CitySearch from "./component/City";
+import CurrentWeather from "./component/WeatherInfo";
+import Forecast from "./component/ForecastWeather";
 
 function MainSection(){
   const[weatherDate,setWeatherDate] = useState(null);
