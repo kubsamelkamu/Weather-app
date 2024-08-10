@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CitySearch from "./component/City";
 
 function MainSection(){
   const[weatherDate,setWeatherDate] = useState(null);
@@ -11,7 +12,7 @@ function MainSection(){
 
   return(
     <div className="main-section-container flex-grow bg-gray-100 p-4 md:p-10">
-
+      <CitySearch onWeatherData={handleWeatherData} />
     </div>
   )
 }
