@@ -5,7 +5,13 @@ function Forecast({city}){
     const[error,setError] = useState(null);
 
     useEffect(()=>{
-        
+        const fetchForeCastData = async()=>{
+            if (!city) {
+                setForecastData(null);
+                return;
+            }
+        }
+
     })
 
 }
