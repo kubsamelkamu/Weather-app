@@ -24,5 +24,7 @@ function MainSection(){
         <p className="text-center">Enter a city name to check the weather.</p>
       )}
     </div>
-  )
+  );
 }
+
+export default MainSection;
