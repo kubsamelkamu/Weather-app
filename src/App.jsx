@@ -21,7 +21,7 @@ function MainSection(){
           <Forecast city={city} />
         </>
       ):(
-        
+        <p className="text-center">Enter a city name to check the weather.</p>
       )}
     </div>
   )
