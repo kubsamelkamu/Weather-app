@@ -17,7 +17,8 @@ function MainSection(){
       <CitySearch onWeatherData={handleWeatherData} />
       {weatherDate?(
         <>
-          
+          <CurrentWeather weatherData={weatherDate} />
+          <Forecast city={city} />
         </>
       ):(
         
