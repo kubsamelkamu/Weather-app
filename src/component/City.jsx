@@ -48,7 +48,7 @@ function CitySearch({onWeatherData}){
         <input
           type="text"
           value={city}
-          onChange={}
+          onChange={handleCityChange}
           placeholder="Enter city name"
           className="w-full p-3 border border-gray-300 rounded mb-2"
         />
