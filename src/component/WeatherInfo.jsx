@@ -1,8 +1,4 @@
-import { useState} from "react";
 import PropTypes from 'prop-types';
-import CitySearch from "./City";
-
-
 
 function CurrentWeather ({weatherData }) {
   if (!weatherData) {
@@ -27,25 +23,5 @@ function CurrentWeather ({weatherData }) {
 CurrentWeather.propTypes ={
   weatherData: PropTypes.func.isRequired,
 }
-
-export const  MainSection = () => {
-  const [weatherData, setWeatherData] = useState(null);
-
-  const handleWeatherData = (data) => {
-    setWeatherData(data);
-  };
-
-  return (
-    <div className="main-section-container flex-grow bg-gray-100 p-4 md:p-10">
-      <CitySearch onWeatherData={handleWeatherData} />
-      {weatherData ? (
-        <CurrentWeather weatherData={weatherData} />
-      ) : (
-        <p className="text-center">Enter a city name to check the weather.</p>
-      )}
-    </div>
-  );
-};
-
 
 export default CurrentWeather;
