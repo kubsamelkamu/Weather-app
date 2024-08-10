@@ -61,3 +61,5 @@ function CitySearch({onWeatherData}){
 CitySearch.propTypes ={
   onWeatherData: PropTypes.func.isRequired,
 }
+
+export default CitySearch;
