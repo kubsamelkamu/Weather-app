@@ -20,7 +20,9 @@ function Forecast({ city }) {
           `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openweathermap_api_key}`
         );
 
-        
+        const dailyData = processForecastData(response.data);
+        setForecastData(dailyData);
+        setError(null);
       } catch (error) {
 
       }
