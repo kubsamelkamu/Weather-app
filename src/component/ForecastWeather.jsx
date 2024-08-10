@@ -76,5 +76,6 @@ function Forecast({ city }) {
 
 Forecast.propTypes = {
     city: PropTypes.string.isRequired,
-  };
+};
   
+export default Forecast;
