@@ -2,12 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 
-
+const openweathermap_api_key = import.meta.env.VITE_API_KEY;
 function CitySearch({onWeatherData}){
   const[city,setCity] = useState('');
   const[error,setError] = useState(null);
 
-  const openweathermap_api_key = import.meta.env.VITE_API_KEY;
+ 
 
   useEffect(()=>{
     const fetchWeatherData = async()=>{
@@ -28,5 +28,6 @@ function CitySearch({onWeatherData}){
         
       }
     }
-  })
+    fetchWeatherData();
+  },[])
 }
