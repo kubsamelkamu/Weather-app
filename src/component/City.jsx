@@ -22,6 +22,9 @@ function CitySearch({onWeatherData}){
         onWeatherData(response.data);
         setError('');
       } catch (error) {
+        setError(error);
+        setError('Could not fetch weather data. Please try again.');
+        return;
         
       }
     }
