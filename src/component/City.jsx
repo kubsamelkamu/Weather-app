@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+
 
 const openweathermap_api_key = import.meta.env.VITE_API_KEY;
 
@@ -19,11 +20,9 @@ function CitySearch({onWeatherData}){
         const response = await axios(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${openweathermap_api_key}`,
         )
-        const forecast_response = await axios(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${openweathermap_api_key}`
-        )
+       
         onWeatherData(response.data);
-        console.log(forecast_response.data.list);
+       
         
         setError('');
       } catch (error) {
@@ -62,6 +61,7 @@ function CitySearch({onWeatherData}){
     </div>
   );
 }
+
 
 CitySearch.propTypes ={
   onWeatherData: PropTypes.func.isRequired,
