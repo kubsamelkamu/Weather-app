@@ -21,6 +21,7 @@ function Forecast({city}){
                 
             }
         }
+        fetchForeCastData();
 
     })
 
