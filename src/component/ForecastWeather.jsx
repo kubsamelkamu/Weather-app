@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Forecast({city}){
     const[forecastData,setForecastData] = useState(null);
     const[error,setError] = useState(null);
+
+    useEffect(()=>{
+        
+    })
 
 }
