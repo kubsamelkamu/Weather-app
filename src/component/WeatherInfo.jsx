@@ -30,7 +30,7 @@ function CurrentWeather ({weatherData }) {
   );
 };
 
-CurrentWeather2.propTypes ={
+CurrentWeather.propTypes ={
   weatherData: PropTypes.func.isRequired,
 }
 
