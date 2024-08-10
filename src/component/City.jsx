@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CitySearch(){
+function CitySearch({onWeatherData}){
   const[city,setCity] = useState('');
   const[error,setError] = useState(null);
 }
