@@ -24,7 +24,9 @@ function Forecast({ city }) {
         setForecastData(dailyData);
         setError(null);
       } catch (error) {
-
+        setError(error);
+        setError('Could not fetch forecast data. Please Enter Correct city Name.');
+        setForecastData(null);
       }
     };
 
