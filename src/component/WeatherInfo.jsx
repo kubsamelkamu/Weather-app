@@ -1,116 +1,67 @@
-import { useState,useEffect } from "react";
-import axios from "axios";
+import { useState} from "react";
 import PropTypes from 'prop-types';
+import CitySearch from "./City";
 
-const weather_API_Key = import.meta.env.VITE_API_KEY;
 
-function CitySearch({onWeatherData}){
-  const[city,setCity] = useState('London');
-  const[error,setError]=useState(null);
 
-  const handleCityChange =(e)=>{
-     setCity(e.target.value);
+function CurrentWeather ({weatherData }) {
+  if (!weatherData) {
+    return <div>Loading...</div>;
   }
 
-  const handleSearch =async()=>{
-    if (city.trim === '') {
-      setError('Please enter a city name');
-      return;
-    }
-
-    try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_API_KEY}`
-        )
-        onWeatherData(response.data);
-        setError('');
-    } catch (err) {
-      setError(err.message);
-    }
-
-  }
+  const { name, main, weather, wind } = weatherData;
+  const weatherIconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
 
   return (
-    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto mb-4">
-      <h3 className="text-lg font-bold mb-2">Search for a City</h3>
-      <input
-        type="text"
-        value={city}
-        onChange={handleCityChange}
-        placeholder="Enter city name"
-        className="w-full p-2 border border-gray-300 rounded mb-2"
-      />
-      <button
-        onClick={handleSearch}
-        className="w-full bg-blue-500 text-white p-2 rounded"
-      >
-        Search
-      </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
+    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto">
+      <h2 className="text-2xl font-bold mb-2">{name}</h2>
+      <div className="flex items-center mb-4">
+        <img src={weatherIconUrl} alt={weather[0].description} className="w-12 h-12 mr-4" />
+        <div>
+          <p className="text-xl text-gray-700 capitalize">{weather[0].description}</p>
+          <p className="text-3xl text-gray-800">{main.temp}°C</p>
+        </div>
+      </div>
+      <div className="text-gray-600">
+        <p>Humidity: {main.humidity}%</p>
+        <p>Wind Speed: {wind.speed} m/s</p>
+      </div>
     </div>
   );
+};
 
+CurrentWeather2.propTypes ={
+  weatherData: PropTypes.func.isRequired,
 }
 
-CitySearch.propTypes ={
-  onWeatherData: PropTypes.string.isRequired,
-}
+export const  MainSection = () => {
+  const [weatherData, setWeatherData] = useState(null);
 
-function CurrentWeather(){
-  const[weatherData,setWeatherData] = useState(null);
-  const[error,setError] = useState(null);
+  const handleWeatherData = (data) => {
+    setWeatherData(data);
+  };
 
-   useEffect(()=>{
-    const fetchWeatherData = async () =>{
-      try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${weather_API_Key}`
-        );
-        setWeatherData(response.data);
-      } catch (error) {
-        setError(error.message);
-        alert('Error getting weather data');
-      }
-    }
-
-    fetchWeatherData();
-   },[]);
-
-   if (error) {
-    return <div className="text-red-500">{error}</div>
-   }
-
-   if (!weatherData) {
-     return <div>Loading....</div>
-   }
-
-   const{name,main,weather,wind} = weatherData;
-   const weatherIconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
-
-   return(
-    <div className="bg-white shadow-md rounded p-4 max-w-sm mx-auto md:max-w-md lg:max-w-lg">
-        <h2 className="text-x1 font-bold mb-2">{name}</h2>
-        <div className="flex items-center mb-4">
-            <img src={weatherIconUrl} alt={weather[0].description} className="w-12 h-12 mr-4"/>
-            <div>
-              <p className="text-3xl text-gray-800 ">{weather[0].description}</p>
-              <p className="text-3xl text-gray-800">Tempreture:{main.temp}°C</p>
-              <p className="text-3xl text-gray-800">Humidity: {main.humidity}%</p>
-              <p className="text-3xl text-gray-800">Wind Speed: {wind.speed} m/s</p>
-            </div>
-
-        </div>
-       
+  return (
+    <div className="main-section-container">
+      <CitySearch onWeatherData={handleWeatherData} />
+      {weatherData ? (
+        <CurrentWeather2 weatherData={weatherData} />
+      ) : (
+        <p className="text-center">Enter a city name to check the weather.</p>
+      )}
     </div>
-   );
-}
+  );
+};
+
+
 
 
 
 export const Main = () => {
   return (
-    <main className="flex-grow bg-gray-100 p-4 md:p-8">
-      <CurrentWeather/>
+    <main className="flex-grow bg-gray-100 p-4 md:p-10">
+      <CitySearch/>
+   
     </main>
   );
 };
