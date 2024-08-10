@@ -23,6 +23,6 @@ function Forecast({city}){
         }
         fetchForeCastData();
 
-    })
+    },[city])
 
 }
