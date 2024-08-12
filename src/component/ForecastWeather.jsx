@@ -55,7 +55,7 @@ function Forecast({ city }) {
   return (
     <div className="forecast-container">
       {error && <p className="text-red-500 text-center">{error}</p>}
-      {!forecastData ? (
+      {!forecastData ? (        
         <p className="text-center">Enter a city to see the forecast.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -66,7 +66,7 @@ function Forecast({ city }) {
                 alt={day.description}
                 className="w-16 h-16 mx-auto"
               />
-              <h4 className="text-lg font-bold text-center">{new Date(day.date).toLocaleDateString()}</h4>
+              <h4 className="text-lg font-bold text-center mb-1">{new Date(day.date).toLocaleDateString()}</h4>
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
               <p className="text-center">Humidity: {day.humidity}%</p>
