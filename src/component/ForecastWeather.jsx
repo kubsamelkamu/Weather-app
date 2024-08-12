@@ -82,7 +82,7 @@ function Forecast({ city, isVisible }) {
 
 Forecast.propTypes = {
   city: PropTypes.string.isRequired,
-  
+  isVisible:PropTypes.bool.isRequired,
 };
 
 export default Forecast;
