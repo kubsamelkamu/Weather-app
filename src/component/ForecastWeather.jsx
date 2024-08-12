@@ -34,18 +34,19 @@ function Forecast({ city }) {
   }, [city]);
 
   const processForecastData = (data) => {
-    if (!data || !data.list) return null; 
-
     const dailyData = [];
     const forecasts = data.list;
     for (let i = 0; i < forecasts.length; i += 8) {
       const daily = forecasts[i];
       dailyData.push({
-        date: daily.dt_txt,
+        date: new Date(daily.dt_txt).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+        }), // Format: Aug 10
         temp: daily.main.temp,
-        humidity: daily.main.humidity, 
-        windSpeed: daily.wind.speed, 
         description: daily.weather[0].description,
+        humidity: daily.main.humidity, // Correct property name
+        windSpeed: daily.wind.speed,   // Correct property name
         icon: daily.weather[0].icon,
       });
     }
@@ -55,26 +56,26 @@ function Forecast({ city }) {
   return (
     <div className="forecast-container">
       {error && <p className="text-red-500 text-center">{error}</p>}
-      {!forecastData ? (        
-        <p className="text-center">Loading...</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {forecastData.map((day, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {forecastData ? (
+          forecastData.map((day, index) => (
             <div key={index} className="forecast-card bg-blue-200 p-4 rounded shadow-md">
               <img
                 src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
                 alt={day.description}
                 className="w-16 h-16 mx-auto"
               />
-              <h4 className="text-lg font-bold text-center mb-1">{new Date(day.date).toLocaleDateString()}</h4>
+              <h4 className="text-lg font-bold text-center">{day.date}</h4>
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
-              <p className="text-center">Humidity: {day.humidity}%</p>
-              <p className="text-center">Wind: {day.windSpeed} m/s</p>
+              <p className="text-lg mb-2">Humidity: {day.humidity}%</p>
+              <p className="text-lg mb-2">Wind: {day.windSpeed} m/s</p>
             </div>
-          ))}
-        </div>
-      )}
+          ))
+        ) : (
+          <p className="text-center">Enter a city to see the forecast.</p>
+        )}
+      </div>
     </div>
   );
 }
