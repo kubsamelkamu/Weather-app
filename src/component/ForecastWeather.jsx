@@ -69,8 +69,8 @@ function Forecast({ city }) {
               <h4 className="text-lg font-bold text-center">{new Date(day.date).toLocaleDateString()}</h4>
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
-              <p className="text-lg mb-2">Humidity: {day.humidity}%</p>
-              <p className="text-lg mb-2">Wind: {day.windSpeed} m/s</p>
+              <p className="text-center">Humidity: {day.humidity}%</p>
+              <p className="text-center">Wind: {day.windSpeed} m/s</p>
             </div>
           ))}
         </div>
