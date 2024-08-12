@@ -42,11 +42,11 @@ function Forecast({ city }) {
         date: new Date(daily.dt_txt).toLocaleDateString('en-US', {
           month: 'short',
           day: 'numeric',
-        }), // Format: Aug 10
+        }),
         temp: daily.main.temp,
         description: daily.weather[0].description,
-        humidity: daily.main.humidity, // Correct property name
-        windSpeed: daily.wind.speed,   // Correct property name
+        humidity: daily.main.humidity,
+        windSpeed: daily.wind.speed,  
         icon: daily.weather[0].icon,
       });
     }
@@ -65,11 +65,11 @@ function Forecast({ city }) {
                 alt={day.description}
                 className="w-16 h-16 mx-auto"
               />
-              <h4 className="text-lg font-bold text-center">{day.date}</h4>
+              <h4 className="text-lg font-bold text-center mb-2">{day.date}</h4>
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
-              <p className="text-lg mb-2">Humidity: {day.humidity}%</p>
-              <p className="text-lg mb-2">Wind: {day.windSpeed} m/s</p>
+              <p className="text-center">Humidity: {day.humidity}%</p>
+              <p className="text-center">Wind: {day.windSpeed} m/s</p>
             </div>
           ))
         ) : (
