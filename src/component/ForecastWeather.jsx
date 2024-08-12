@@ -73,7 +73,9 @@ function Forecast({ city }) {
             </div>
           ))
         ) : (
-          <p className="text-center">Enter a city to see the forecast.</p>
+          <p className="text-center ">
+            Loading...
+          </p>
         )}
       </div>
     </div>
