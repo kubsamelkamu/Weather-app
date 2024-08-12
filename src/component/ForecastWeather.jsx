@@ -56,7 +56,7 @@ function Forecast({ city }) {
     <div className="forecast-container">
       {error && <p className="text-red-500 text-center">{error}</p>}
       {!forecastData ? (        
-        <p className="text-center">Enter a city to see the forecast.</p>
+        <p className="text-center">Loading...</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {forecastData.map((day, index) => (
