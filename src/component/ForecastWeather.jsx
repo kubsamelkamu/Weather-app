@@ -59,7 +59,10 @@ function Forecast({ city, isVisible }) {
           forecastData.map((day, index) => (
             <div key={index} className="forecast-card bg-blue-200 p-4 rounded shadow-md">
               <h4 className="text-lg font-bold text-center">
-                {new Date(day.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                {new Date(day.date).toLocaleDateString('en-US',
+                   { month: 'short',
+                     day: 'numeric'
+                   })}
               </h4>
               <img
                 src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
