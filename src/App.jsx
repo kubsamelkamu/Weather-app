@@ -26,7 +26,7 @@ function MainSection() {
           <div className="text-center mt-4">
             <button
               onClick={toggleForecast}
-              className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+              className="bg-blue-500 text-white px-4 py-2 rounded mb-5 mt-4"
             >
               {showForecast ? 'Hide 5 Day Forecast' : 'Show 5 Day Forecast'}
             </button>
