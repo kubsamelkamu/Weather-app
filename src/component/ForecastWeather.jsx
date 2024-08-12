@@ -53,7 +53,7 @@ function Forecast({ city, isVisible }) {
   return (
     <div className={`forecast-container transition-transform duration-500 ease-in-out ${isVisible ? 'max-h-screen' : 'max-h-0 overflow-hidden'}`}>
       {error && <p className="text-red-500 text-center">{error}</p>}
-      <div className="text-center mb-4 text-xl font-bold">Forecast Weather for {city}</div>
+      <div className="text-center mb-4 text-xl font-bold">5 Day Weather Forcast for {city}</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {forecastData ? (
           forecastData.map((day, index) => (
@@ -73,7 +73,7 @@ function Forecast({ city, isVisible }) {
             </div>
           ))
         ) : (
-          <p className="text-center col-span-full">Enter a city to see the forecast.</p>
+          <p className="text-center col-span-full">Loading...</p>
         )}
       </div>
     </div>
