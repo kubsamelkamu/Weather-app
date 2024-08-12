@@ -24,6 +24,9 @@ function MainSection(){
       {weatherDate?(
         <>
           <CurrentWeather weatherData={weatherDate} />
+          <div className="text-ceter mt-4">
+
+          </div>
           <Forecast city={city} />
         </>
       ):(
