@@ -6,6 +6,7 @@ import Forecast from "./component/ForecastWeather";
 function MainSection(){
   const[weatherDate,setWeatherDate] = useState(null);
   const[city,setCity] = useState(null);
+  const[showForecast,setShowForecast] = useState(false);
 
   const handleWeatherData=(data)=>{
       setWeatherDate(data);
