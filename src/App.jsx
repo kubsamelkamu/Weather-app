@@ -5,12 +5,13 @@ import Forecast from "./component/ForecastWeather";
 
 function MainSection() {
   const [weatherData, setWeatherData] = useState(null);
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState('');
   const [showForecast, setShowForecast] = useState(false);
 
   const handleWeatherData = (data) => {
     setWeatherData(data);
     setCity(data ? data.name : '');
+  
   };
 
   const toggleForecast = () => {
@@ -26,12 +27,12 @@ function MainSection() {
           <div className="text-center mt-4">
             <button
               onClick={toggleForecast}
-              className="bg-blue-500 text-white px-4 py-2 rounded mb-5 mt-4"
+              className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
             >
-              {showForecast ? 'Hide 5 Day Forecast' : 'Show 5 Day Forecast'}
+              {showForecast ? 'Hide 5 Day forecast' : 'Show 5 Day forecast'}
             </button>
           </div>
-          {showForecast && <Forecast city={city} />}
+          <Forecast city={city} isVisible={showForecast} />
         </>
       ) : (
         <p className="text-center">Enter a city name to check the weather.</p>

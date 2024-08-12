@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.forecast-card {
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .forecast-card:hover,
+  .forecast-card:focus {
+    border: 2px solid #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    outline: none;
+  }
+  
+  .forecast-card:focus {
+    border: 2px solid #0056b3; 
+  }
+  
+  
