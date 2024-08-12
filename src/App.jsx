@@ -11,6 +11,7 @@ function MainSection(){
   const handleWeatherData=(data)=>{
       setWeatherDate(data);
       setCity(data?data.name:'')
+      setShowForecast(false);
   }
 
   return(
