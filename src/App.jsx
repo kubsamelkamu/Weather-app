@@ -14,6 +14,10 @@ function MainSection(){
       setShowForecast(false);
   }
 
+  const toggleForecast=()=>{
+    setShowForecast(!showForecast);
+  };
+
   return(
     <div className="main-section-container flex-grow bg-gray-100 p-4 md:p-10">
       <CitySearch onWeatherData={handleWeatherData} />
