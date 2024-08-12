@@ -43,7 +43,10 @@ function Forecast({ city }) {
         date: daily.dt_txt,
         temp: daily.main.temp,
         description: daily.weather[0].description,
+        humidity: daily.main.humidity, 
+        windSpeed: daily.wind.speed, 
         icon: daily.weather[0].icon,
+
       });
     }
     return dailyData;
@@ -64,6 +67,8 @@ function Forecast({ city }) {
               <h4 className="text-lg font-bold text-center">{new Date(day.date).toLocaleDateString()}</h4>
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
+              <p className="text-center">Humidity: {day.humidity}%</p>
+              <p className="text-center">Wind: {day.windSpeed} m/s</p>
             </div>
           ))
         ) : (
