@@ -24,7 +24,8 @@ function ThemeSwitcher{
                 <option value="light">Light</option>
                 <option value="dark">Dark</option>
             </select>
-
         </div>
-    )
+    );
 }
+
+export default ThemeSwitcher
