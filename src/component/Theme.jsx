@@ -18,6 +18,7 @@ function ThemeSwitcher{
 
     return(
         <div className="theme-switcher">
+            <label htmlFor="theme" className="mr-2">Theme:</label>
 
         </div>
     )
