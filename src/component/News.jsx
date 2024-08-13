@@ -11,7 +11,18 @@ function WeatherNews({city}){
     useEffect(()=>{
         const fetchNews = async()=>{
             if (!city) {
-                setArticle([]);                
+                setArticle([]);    
+                return;            
+            }
+
+            try {
+                const response = axios.get(
+                    `https://newsapi.org/v2/everything?q=${city} weather OR climate change&apiKey=${news_api_key}&pageSize=5`
+                )
+                setArticle((await response).data.articles);
+                setError(null);
+            } catch (error) {
+                
             }
         }
     })
