@@ -1,4 +1,4 @@
-
+import ThemeSwitcher from "./Theme";
 
 const Header = () => {
   return (
