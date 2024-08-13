@@ -24,6 +24,43 @@ function CurrentWeather({ weatherData }) {
       }
     }
   },[weatherData])
+
+  const animateSunny = () => {
+    anime({
+      targets: '.current-weather-container',
+      backgroundColor: '#FFD700',
+      duration: 2000,
+    });
+  };
+
+  const animateRain = () => {
+    anime({
+      targets: '.rain',
+      translateY: ['-100%', '100%'],
+      loop: true,
+      easing: 'linear',
+      duration: 800,
+    });
+  };
+
+  const animateClouds = () => {
+    anime({
+      targets: '.cloud',
+      translateX: '100vw',
+      loop: true,
+      easing: 'linear',
+      duration: 20000,
+    });
+  };
+
+  const resetAnimation = () => {
+    anime({
+      targets: '.current-weather-container',
+      backgroundColor: '#ffffff',
+      duration: 2000,
+    });
+  };
+
   
   
 
