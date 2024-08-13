@@ -71,3 +71,8 @@
     --secondary-color: #555555;
     --icon-color: #ffffff;
   }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
