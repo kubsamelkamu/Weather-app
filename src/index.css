@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #ffffff;
+  --font-color: #000000;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --icon-color: #333;
+}
 
 .forecast-card {
     transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
+}
   
   .forecast-card:hover,
   .forecast-card:focus {
@@ -56,5 +63,30 @@
     left: 50%;
     animation: fall 0.5s linear infinite;
   }
-  
-  
+
+  [data-theme="dark"]{
+    --bg-color: #333333;
+    --font-color: #ffffff;
+    --primary-color: #1f78d1;
+    --secondary-color: #555555;
+    --icon-color: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+  .header, .main-section-container, .button {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+  }
+
+  .forecast-card {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+  }
+
+  .icon {
+    color: var(--icon-color);
+  }
