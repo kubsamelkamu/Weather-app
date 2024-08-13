@@ -8,4 +8,11 @@ function ThemeSwitcher{
         setTheme(savesTheme);
         document.documentElement.setAttribute('data-theme',savesTheme);
     },[])
+
+    const handleThemChange =(event)=>{
+        const selectedTheme  = event.target.value;
+        setTheme(selectedTheme);
+        document.documentElement.setAttribute('data-theme',selectedTheme);
+        localStorage.setItem('theme',selectedTheme);
+    }
 }
