@@ -1,8 +1,8 @@
-const { useState } = require("react");
-
+import { useState } from "react";
+import PropTypes from 'prop-types';
 
 const news_api_key = import.meta.env.VITE_NEWS_API_KEY;
-function WeatherNews(){
+function WeatherNews({city}){
     const[article,setArticle] = useState([]);
     const[error,setError]=useState(null);
 }
