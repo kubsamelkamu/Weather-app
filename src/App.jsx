@@ -34,6 +34,7 @@ function MainSection() {
             </button>
           </div>
           <Forecast city={city} isVisible={showForecast} />
+          <WeatherNews city={city}/>
         </>
       ) : (
         <p className="text-center">Enter a city name to check the weather.</p>
