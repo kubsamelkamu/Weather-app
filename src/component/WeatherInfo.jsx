@@ -7,6 +7,21 @@ function CurrentWeather({ weatherData }) {
   useEffect(()=>{
     if (weatherData) {
       const weatherCondition = weatherData.weather[0].main.toLowerCase();
+
+      switch (weatherCondition) {
+        case 'clear':
+          animateSunny();
+          break;
+        case 'rain':
+          animateRain();
+          break;
+        case 'clouds':
+          animateClouds();
+          break;
+        default:
+          resetAnimation();
+          break;
+      }
     }
   })
   
