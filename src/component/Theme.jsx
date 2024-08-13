@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ThemeSwitcher{
+function ThemeSwitcher(){
     const[theme,setTheme] = useState('light');
 
     useEffect(()=>{
@@ -28,4 +28,4 @@ function ThemeSwitcher{
     );
 }
 
-export default ThemeSwitcher
+export default ThemeSwitcher;
