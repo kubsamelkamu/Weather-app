@@ -23,7 +23,7 @@ function CurrentWeather({ weatherData }) {
           break;
       }
     }
-  })
+  },[weatherData])
   
   
 
