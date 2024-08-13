@@ -6,3 +6,7 @@ function WeatherNews({city}){
     const[article,setArticle] = useState([]);
     const[error,setError]=useState(null);
 }
+
+WeatherNews.propTypes ={
+    city: PropTypes.string.isRequired,
+}
