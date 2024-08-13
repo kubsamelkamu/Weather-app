@@ -18,4 +18,43 @@
     border: 2px solid #0056b3; 
   }
   
+  /* Add this to your CSS file or inside a <style> tag */
+@keyframes moveClouds {
+    0% {
+      left: -200px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .cloud {
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 200px;
+    opacity: 0.5;
+    animation: moveClouds 20s linear infinite;
+  }
+
+  /* Add this to your CSS file or inside a <style> tag */
+@keyframes fall {
+    0% {
+      top: -10px;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .rain {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: blue;
+    top: 0;
+    left: 50%;
+    animation: fall 0.5s linear infinite;
+  }
+  
   
