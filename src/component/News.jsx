@@ -54,3 +54,5 @@ function WeatherNews({city}){
 WeatherNews.propTypes ={
     city: PropTypes.string.isRequired,
 }
+
+export default WeatherNews
