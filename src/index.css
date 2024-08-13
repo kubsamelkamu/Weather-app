@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #ffffff;
+  --font-color: #000000;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --icon-color: #333;
+}
 
 .forecast-card {
     transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -56,5 +63,7 @@
     left: 50%;
     animation: fall 0.5s linear infinite;
   }
+
   
+
   
