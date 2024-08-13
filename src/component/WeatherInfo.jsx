@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import anime from 'animejs';
 
 function CurrentWeather({ weatherData }) {
+
+  useEffect(()=>{
+    if (weatherData) {
+      const weatherCondition = weatherData.weather[0].main.toLowerCase();
+    }
+  })
   
   
 
