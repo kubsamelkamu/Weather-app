@@ -26,7 +26,8 @@ function WeatherNews({city}){
                 setError('could not fetch news article')
             }
         }
-    })
+        fetchNews();
+    },[city])
 
 
 }
