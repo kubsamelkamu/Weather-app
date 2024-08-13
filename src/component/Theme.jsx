@@ -19,6 +19,11 @@ function ThemeSwitcher{
     return(
         <div className="theme-switcher">
             <label htmlFor="theme" className="mr-2">Theme:</label>
+            <select id="theme" value={theme} onChange={handleThemChange}
+            className="p-2 rounded bg-white text-black">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
 
         </div>
     )
