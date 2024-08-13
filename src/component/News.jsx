@@ -22,7 +22,8 @@ function WeatherNews({city}){
                 setArticle((await response).data.articles);
                 setError(null);
             } catch (error) {
-                
+                setError(error);
+                setError('could not fetch news article')
             }
         }
     })
