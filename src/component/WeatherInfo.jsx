@@ -28,6 +28,9 @@ function CurrentWeather({ weatherData }) {
   );
 }
 
+CurrentWeather.propTypes ={
+  weatherData:PropTypes.object.isRequired,
+}
 
 
 export default CurrentWeather;
