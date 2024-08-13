@@ -15,4 +15,10 @@ function ThemeSwitcher{
         document.documentElement.setAttribute('data-theme',selectedTheme);
         localStorage.setItem('theme',selectedTheme);
     }
+
+    return(
+        <div className="theme-switcher">
+
+        </div>
+    )
 }
