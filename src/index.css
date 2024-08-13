@@ -86,3 +86,7 @@
     background-color: var(--secondary-color);
     color: var(--font-color);
   }
+
+  .icon {
+    color: var(--icon-color);
+  }
