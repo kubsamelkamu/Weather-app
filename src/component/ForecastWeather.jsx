@@ -51,20 +51,20 @@ function Forecast({ city, isVisible }) {
   };
 
   return (
-    <div className={`forecast-container max-w-full p-4 transition-transform duration-500 ease-in-out ${isVisible ? 'max-h-screen' : 'max-h-0 overflow-hidden'} p-4`}>
+    <div className={`forecast-container ${isVisible ? 'max-h-screen' : 'max-h-0'} bg-blue-500 text-white shadow-md rounded-lg p-8 max-w-3xl w-full mx-auto h-96 flex flex-col items-center justify-center relative overflow-hidden`}>
       {error && <p className="text-red-500 text-center">{error}</p>}
       <div className="text-center mb-4 text-xl font-bold">5 Day Weather Forcast for {city}</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {forecastData ? (
           forecastData.map((day, index) => (
-            <div key={index} className="forecast-card bg-blue-200 p-4 rounded shadow-md">
+            <div key={index} className="forecast-card bg-blue-200 p-2 rounded shadow-md">
               <h4 className="text-lg font-bold text-center">
                 {new Date(day.date).toLocaleDateString('en-US',
                    { month: 'short',
                     day: 'numeric' })}
               </h4>
               <img src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`} 
-              alt={day.description} className="w-16 h-16 max-w-full mx-auto" />
+              alt={day.description} className="w-10 h-10 max-w-full mx-auto" />
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
               <p className="text-center">Humidity: {day.humidity}%</p>
