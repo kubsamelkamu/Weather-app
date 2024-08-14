@@ -27,6 +27,7 @@ function CitySearch({onWeatherData}){
         setError('');
       } catch (error) {
         setError(error);
+        console.log(error);
         onWeatherData(null);
         setError('Could not fetch weather data. Please Enter Correct city Name.');
          
