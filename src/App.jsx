@@ -45,3 +45,16 @@ export function MainSection() {
 }
 
 
+function App() {
+  return (
+    <div className="App flex flex-col min-h-screen">
+      <Header />
+      <MainSection />
+      <Footer />
+    </div>
+  );
+}
+
+
+
+export default App;
