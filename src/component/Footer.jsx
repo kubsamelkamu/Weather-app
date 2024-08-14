@@ -6,8 +6,8 @@ function Footer(){
       <div className="container mx-auto text-center md:text-center">
         <h4 className="text-xl mb-2">Contact Information</h4>
         <div className="flex justify-center md:justify-center space-x-4">
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-2xl hover:text-blue-400" />
+          <a href="https://instagram.com/kubsamelkamu" target="_blank" rel="noopener noreferrer">
+            <FaInstagram className="text-2xl hover:text-pink-500" />
           </a>
           <a href="https://linkedin.com/in/kubsa-melkamu-519bb5263" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-2xl hover:text-blue-700" />
