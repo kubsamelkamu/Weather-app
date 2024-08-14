@@ -16,7 +16,7 @@ function Footer(){
             <FaGithub className="text-2xl hover:text-gray-500" />
           </a>
         </div>
-        <p className="mt-4">Email: <a href="mailto:youremail@example.com" className="underline">youremail@example.com</a></p>
+        <p className="mt-4">Email: <a href="mailto:kubsamlkm@gmail.com" className="underline">Kubsamlkm@gmail.com</a></p>
       </div>
     </footer>
   );
