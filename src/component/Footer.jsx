@@ -1,11 +1,11 @@
 import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const Footer = () => {
+function Footer(){
   return (
     <footer className="bg-gray-800 text-white p-4 mt-auto">
-      <div className="container mx-auto text-center md:text-left">
+      <div className="container mx-auto text-center md:text-center">
         <h4 className="text-xl mb-2">Contact Information</h4>
-        <div className="flex justify-center md:justify-start space-x-4">
+        <div className="flex justify-center md:justify-center space-x-4">
           <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
             <FaTwitter className="text-2xl hover:text-blue-400" />
           </a>
@@ -21,5 +21,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
