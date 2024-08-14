@@ -9,7 +9,7 @@ function Footer(){
           <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
             <FaTwitter className="text-2xl hover:text-blue-400" />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/kubsa-melkamu-519bb5263" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-2xl hover:text-blue-700" />
           </a>
           <a href="https://github.com/kubsamelkamu" target="_blank" rel="noopener noreferrer">
