@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const openweathermap_api_key = import.meta.env.VITE_API_KEY;
 
-function Forecast({ city }) {
+function Forecast({ city, isVisible }) {
   const [forecastData, setForecastData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -34,7 +34,6 @@ function Forecast({ city }) {
   }, [city]);
 
   const processForecastData = (data) => {
-    // Process API response to get daily forecast data
     const dailyData = [];
     const forecasts = data.list;
     for (let i = 0; i < forecasts.length; i += 8) {
@@ -43,28 +42,29 @@ function Forecast({ city }) {
         date: daily.dt_txt,
         temp: daily.main.temp,
         description: daily.weather[0].description,
-        humidity: daily.main.humidity, 
-        windSpeed: daily.wind.speed, 
+        humidity: daily.main.humidity,
+        windSpeed: daily.wind.speed,
         icon: daily.weather[0].icon,
-
       });
     }
     return dailyData;
   };
 
   return (
-    <div className="forecast-container">
+    <div className={`forecast-container max-w-full p-4 transition-transform duration-500 ease-in-out ${isVisible ? 'max-h-screen' : 'max-h-0 overflow-hidden'} p-4`}>
       {error && <p className="text-red-500 text-center">{error}</p>}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="text-center mb-4 text-xl font-bold">5 Day Weather Forcast for {city}</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         {forecastData ? (
           forecastData.map((day, index) => (
             <div key={index} className="forecast-card bg-blue-200 p-4 rounded shadow-md">
-              <img
-                src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                alt={day.description}
-                className="w-16 h-16 mx-auto"
-              />
-              <h4 className="text-lg font-bold text-center">{new Date(day.date).toLocaleDateString()}</h4>
+              <h4 className="text-lg font-bold text-center">
+                {new Date(day.date).toLocaleDateString('en-US',
+                   { month: 'short',
+                    day: 'numeric' })}
+              </h4>
+              <img src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`} 
+              alt={day.description} className="w-16 h-16 max-w-full mx-auto" />
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
               <p className="text-center">Humidity: {day.humidity}%</p>
@@ -72,15 +72,17 @@ function Forecast({ city }) {
             </div>
           ))
         ) : (
-          <p className="text-center">Enter a city to see the forecast.</p>
+          <p className="text-center col-span-full">Loading...</p>
         )}
       </div>
     </div>
   );
 }
 
+
 Forecast.propTypes = {
-    city: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  isVisible:PropTypes.bool.isRequired,
 };
-  
+
 export default Forecast;

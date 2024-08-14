@@ -2,3 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #ffffff;
+  --font-color: #000000;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --icon-color: #333;
+}
+
+.forecast-card {
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+  
+  .forecast-card:hover,
+  .forecast-card:focus {
+    border: 2px solid #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    outline: none;
+  }
+  
+  .forecast-card:focus {
+    border: 2px solid #0056b3; 
+  }
+  
+  /* Add this to your CSS file or inside a <style> tag */
+@keyframes moveClouds {
+    0% {
+      left: -200px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  .cloud {
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 200px;
+    opacity: 0.5;
+    animation: moveClouds 20s linear infinite;
+  }
+
+  /* Add this to your CSS file or inside a <style> tag */
+@keyframes fall {
+    0% {
+      top: -10px;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  .rain {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: blue;
+    top: 0;
+    left: 50%;
+    animation: fall 0.5s linear infinite;
+  }
+
+  [data-theme="dark"]{
+    --bg-color: #333333;
+    --font-color: #ffffff;
+    --primary-color: #1f78d1;
+    --secondary-color: #555555;
+    --icon-color: #ffffff;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+  .header, .main-section-container, .button {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+  }
+
+  .forecast-card {
+    background-color: var(--secondary-color);
+    color: var(--font-color);
+  }
+
+  .icon {
+    color: var(--icon-color);
+  }
