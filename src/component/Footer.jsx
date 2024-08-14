@@ -1,4 +1,4 @@
-import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Footer(){
   return (
@@ -7,7 +7,7 @@ function Footer(){
         <h4 className="text-xl mb-2">Contact Information</h4>
         <div className="flex justify-center md:justify-center space-x-4">
           <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-            <FaTwitter className="text-2xl hover:text-blue-400" />
+            <FaInstagram className="text-2xl hover:text-blue-400" />
           </a>
           <a href="https://linkedin.com/in/kubsa-melkamu-519bb5263" target="_blank" rel="noopener noreferrer">
             <FaLinkedin className="text-2xl hover:text-blue-700" />
