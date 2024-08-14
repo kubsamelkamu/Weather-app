@@ -35,6 +35,8 @@ export function MainSection() {
               </button>
             </div>
             <Forecast city={city} isVisible={showForecast} />
+            <hr />
+            <Footer/>
           </>
         ) : (
           <p className="text-center">Enter a city name to check the weather.</p>
@@ -46,11 +48,12 @@ export function MainSection() {
 
 
 function App() {
+ 
   return (
     <div className="App flex flex-col min-h-screen">
       <Header />
       <MainSection />
-      <Footer />
+    
     </div>
   );
 }
