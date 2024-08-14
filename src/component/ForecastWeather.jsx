@@ -51,7 +51,7 @@ function Forecast({ city, isVisible }) {
   };
 
   return (
-    <div className={`forecast-container transition-transform duration-500 ease-in-out ${isVisible ? 'max-h-screen' : 'max-h-0 overflow-hidden'}`}>
+    <div className={`forecast-container max-w-full p-4 transition-transform duration-500 ease-in-out ${isVisible ? 'max-h-screen' : 'max-h-0 overflow-hidden'} p-4`}>
       {error && <p className="text-red-500 text-center">{error}</p>}
       <div className="text-center mb-4 text-xl font-bold">5 Day Weather Forcast for {city}</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -61,14 +61,10 @@ function Forecast({ city, isVisible }) {
               <h4 className="text-lg font-bold text-center">
                 {new Date(day.date).toLocaleDateString('en-US',
                    { month: 'short',
-                     day: 'numeric'
-                   })}
+                    day: 'numeric' })}
               </h4>
-              <img
-                src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                alt={day.description}
-                className="w-16 h-16 mx-auto"
-              />
+              <img src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`} 
+              alt={day.description} className="w-16 h-16 max-w-full mx-auto" />
               <p className="text-center">{day.description}</p>
               <p className="text-center">Temp: {day.temp.toFixed(1)}°C</p>
               <p className="text-center">Humidity: {day.humidity}%</p>
@@ -82,6 +78,7 @@ function Forecast({ city, isVisible }) {
     </div>
   );
 }
+
 
 Forecast.propTypes = {
   city: PropTypes.string.isRequired,
