@@ -9,6 +9,10 @@
   --secondary-color: #6c757d;
   --icon-color: #333;
 }
+.forecast-container {
+  width: auto;
+  height: auto;
+}
 
 .forecast-card {
     transition: border 0.3s ease, box-shadow 0.3s ease;
