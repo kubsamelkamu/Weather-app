@@ -65,5 +65,5 @@ This project is licensed under the MIT License.
 ## Contact
 For any inquiries, feel free to reach out:
 
-- **LinkedIn:** [Your Name](https://linkedin.com/in/kubsa-melkamu-519bb5263)
-- **Email:** [youremail@example.com](mailto:kubsamlkm@gmail.com)
+- **LinkedIn:** [Kubsa Melkamu](https://linkedin.com/in/kubsa-melkamu-519bb5263)
+- **Email:** [kubsamlkm@gmail.com](mailto:kubsamlkm@gmail.com)
